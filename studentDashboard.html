@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+    <title>Document</title>
+</head>
+<body> 
+    <div class="sidenav">
+
+            <h4 style="color: white; padding-left: 10px;">Welcome! </h4>
+           
+        <button class="dropdown-btn"><i class="fa fa-user"></i>
+            <td>&nbsp;</td>Profile
+        </button>
+        <div class="dropdown-container">
+            <a href="#" onclick="openRegistrationForm()">change password </a>
+            <a href="#" onclick="openRegistrationForm()">Student details </a>
+        </div>
+        <button class="dropdown-btn"><i class="fas fa-clipboard-check"></i> View Hall
+        </button>
+        <div class="dropdown-container">
+            <a href="#" onclick="addHall()">Add Hall</a>
+            <a href="#" onclick="allocateHall()">Allocate Hall</a>
+            <a href="#" onclick="openTable()">View Allocate Hall</a>
+        </div>
+
+        <button class="dropdown-btn"><i class="fa fa-book"></i>
+            <td>&nbsp;</td>Notification
+        </button> 
+        <div class="dropdown-container">
+            <a href="#">view all Notification</a>
+        </div>
+        <button class="dropdown-btn"> <i class="fas fa-times lg-4"></i>
+            <tb>&nbsp;</tb> Signout
+        </button>
+        <div class="dropdown-container">
+            <a href="/logout">close Application</a>
+        </div>
+    </div>
+    <div class="container1" style="margin-left: 150px; padding-left: 200px;" id="Main">
+        <div class="row">
+            <div class="col-md-5 ">
+                <h2>New here?</h2>
+                <ul>
+                    <li>Welcome to the hall Allocation System.</li>
+                    <li>Complete your profile</li>
+                    <li>Generate Acceptance invoice</li>
+                </ul>
+                <p>If you are a new student, kindly follow these steps.</p>
+            </div>
+            <div class="col-md-5">
+                <h2>Need Help?</h2>
+                <p>If you need any help, kindly send a mail to <br>
+                    help@teneceschoolsupport.com and we will <br>
+                    attend to you. You can also use the chat box <br>
+                    on the log in page</p>
+            </div>
+        </div>
+    </div>
+    <div id="registrationForm" class="registration-form">
+        <h2>Student Registration Form</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" value="" disabled>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="" disabled>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="education">Highest Education Level:</label>
+                <select id="education" name="education" required>
+                    <option value="">Select</option>
+                    <option value="high_school">High School</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="graduate">Graduate</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+     
+    </div>
+
+    <!--this is for student display-->
+    <div id="table1" class="container1">
+            <h1 style="text-align: center;">Registered students</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>level</th>
+                        <th>Phone Number</th>
+                        <th>faculty</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                      
+                            <tr>      
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>/td>
+                                <td></td>
+                            </tr>
+                 
+                   
+                </tbody>
+            </table>
+    
+                <h1 style="text-align: center;"> no entries found</h1>
+              
+
+            <!--end student display-->
+    </div>
+
+    <!-- add hall -->
+    <div id="addhall"  class="container1">
+        <form id="form1" action="" method="">
+            <label for="name">Hall Name</label>
+            <input type="text" name="hallName" required>
+            
+            <label for="capacity">Hall Capacity</label>
+            <input type="number" name="hallCapacity" required>
+          
+            <button type="submit">Add Hall</button>
+          </form>
+    </div>
+
+    <!-- allocate hall -->
+     <div id="allocateHall" class="container1">
+    <div class="container mt-5">
+        <h2>Allocate Hall to Department</h2>
+        
+        <form  action="allocateHall" method="post" id="allocationForm">
+          <div class="form-group">
+            <label for="department">Department Name:</label>
+            <input type="text" id="department" name="department" class="form-control" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="students">Number of Students:</label>
+            <input type="number" id="students" name="students" class="form-control" required>
+          </div>
+    
+          <button type="submit" class="btn btn-primary">Allocate Hall</button>
+        </form>
+    
+        <div id="result" class="mt-3"></div>
+      </div>
+    </div>
+
+    <script>
+        // const form1 = document.getElementById('allocationForm');
+    
+        // form1.addEventListener('submit',async (e) => {
+        //     e.preventDefault();
+    
+        //     // rest errors
+        //     // emailError.textContent = '';
+        //     // passwordError.textContent = '';
+    
+        //     // get the form values
+        //     const department = form.department.value
+        //     const students = form.students.value
+            
+        //     try {
+               
+        //             const res = await fetch('/allocateHall', {
+        //                 method: 'POST',
+        //                 body: JSON.stringify({ department, students }),
+        //                 headers: { 'Content-Type': 'application/json' },
+        //             })
+                                      
+        //             const data = await res.json();
+        //             console.log(data);
+
+        //             if(data.newHall){
+
+        //                 alert("hall added sucessfully")
+        //                 location.assign('/studentDash')
+        //             }
+            
+        //     } catch (error) {
+        //             console.log(error);
+        //         }
+        // });
+    </script>
+    
+    <script>
+        const form = document.getElementById('form1');
+        const matError = document.querySelector('.matno.error');
+        const passwordError = document.querySelector('.password.error');
+    
+    
+        form.addEventListener('submit',async (e) => {
+            e.preventDefault();
+    
+            // rest errors
+            // emailError.textContent = '';
+            // passwordError.textContent = '';
+    
+            // get the form values
+            const hallName = form.hallName.value
+            const hallCapacity = form.hallCapacity.value
+            
+            try {
+               
+                    const res = await fetch('/addhall', {
+                        method: 'POST',
+                        body: JSON.stringify({ hallName, hallCapacity }),
+                        headers: { 'Content-Type': 'application/json' },
+                    })
+                                      
+                    const dat = await res.json();
+                    console.log(dat);
+
+                    if(dat.newHall){
+
+                        alert("hall added sucessfully")
+                        location.assign('/studentDash')
+                    }
+            
+            } catch (error) {
+                    console.log(error);
+                }
+        });
+    </script>
+         
+    <script>
+       function openNav() {
+            document.querySelector(".sidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.querySelector(".sidenav").style.width = "0";
+        }
+
+        
+    document.addEventListener('DOMContentLoaded', ()=>{
+        const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', (event)=>{
+                //close all dropdowns
+                document.querySelectorAll('.dropdown-container').forEach(content =>{
+                    content.style.display = 'none';
+                });
+
+                //open the clicked dropdown
+                const dropdownContent = button.nextElementSibling;
+                if (dropdownContent.style.display === 'none' || dropdownContent.style.display ==='') {
+                    dropdownContent.style.display = 'block';
+                }
+                else {
+                    dropdownContent.style.display = 'none';
+                }
+
+                // stop propagation to avoid closing when clicking inside the dropdown
+                event.stopPropagation();
+            });
+        });
+
+        //close all dropdowns when clicking outside 
+        document.addEventListener('click', ()=>{
+            document.querySelectorAll('dropdown-container').forEach(content=>{
+                content.style.display = 'none';
+            });
+        });
+    });
+
+    function openRegistrationForm() {
+    document.getElementById("registrationForm").style.display = "block";
+    document.getElementById("Main").style.display = "none";
+    document.getElementById("table1").style.display = "none";
+    document.getElementById("addhall").style.display = "none";
+    document.getElementById("allocateHall").style.display = "none";
+}
+
+function openTable(){
+    document.getElementById("table1").style.display = "block";
+    document.getElementById('registrationForm').style.display = "none";
+    document.getElementById("Main").style.display = "none";
+    document.getElementById("addhall").style.display = "none";
+    document.getElementById("allocateHall").style.display = "none";
+}
+  
+function addHall(){
+    document.getElementById("addhall").style.display = "block";
+    document.getElementById('registrationForm').style.display = "none";
+    document.getElementById("table1").style.display = "none";
+    document.getElementById("Main").style.display = "none";
+    document.getElementById("allocateHall").style.display = "none";
+}
+
+function allocateHall() {
+    document.getElementById("allocateHall").style.display = "block";
+    document.getElementById("Main").style.display = "none";
+    document.getElementById("table1").style.display = "none";
+    document.getElementById("addhall").style.display = "none";
+    document.getElementById('registrationForm').style.display = "none";
+}
+    </script>
+    
+    <footer>All right reserved @2024</footer>
+</body>
+</html>

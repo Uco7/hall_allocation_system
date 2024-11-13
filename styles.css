@@ -1,0 +1,161 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #40732c;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.sidenav a, .dropdown-btn {
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #f2e9e9;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 250px; /* Same width as the sidebar */
+    padding: 0px 10px;
+}
+
+/* Dropdown container (hidden by default) */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+/* Optional: Hover state on dropdown links */
+.dropdown-container a:hover {
+    background-color: #404040;
+    text-decoration: none;
+}
+
+/* Optional: Add a "hover" effect to the open button */
+.main span:hover {
+    background-color: #111;
+    color: white;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    column-gap: 2opx;
+    row-gap: 50px;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* CSS styles for the registration form */
+.registration-form {
+    display: none; /* Hide the registration form initially */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#table1{
+    display: none;
+    margin-left: 50px;
+
+}
+
+#addhall{
+    display: none; 
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#allocateHall{
+    display: none; 
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+table{
+    width:50%;
+    border-collapse:collapse;
+    margin:50px auto;
+}
+table, th,td{
+    border:1px solid black;
+}
+
+th, td {
+    padding:8px;
+    text-align:left;
+}
+
+th{
+    background-color:#f2f2f2;
+}

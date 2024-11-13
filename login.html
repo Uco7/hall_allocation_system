@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+    <script src="https://kit.fontawesome.com/696df01810.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <h1>ALEX EKWUEME FEDERAL UNIVERSITY</h1>
+        <ul>
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login" class="btn">Admin</a></li>
+        </ul>
+    </nav>
+    
+<div class="container">
+    <div class="form-box-login">
+        <h1 id="title">Log In</h1>
+        <form action="">
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" name="matno" placeholder="Matric Number" required>
+                </div>
+                <div class="matno error"></div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="password" required>
+                </div>
+                <div class="password error"></div>
+                <p>Lost Password <a href="#">Click here</a></p>
+                <div class="submit-btn">
+                    <button class="submit" id="submitt">Log In</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+            <script>
+                const form = document.querySelector('form');
+                const matError = document.querySelector('.matno.error');
+                const passwordError = document.querySelector('.password.error');
+            
+            
+                form.addEventListener('submit',async (e) => {
+                    e.preventDefault();
+            
+                    // rest errors
+                    // emailError.textContent = '';
+                    // passwordError.textContent = '';
+            
+                    // get the form values
+                    const matno = form.matno.value;
+                    const password = form.password.value;
+                    
+                    try {
+                       
+                            const res = await fetch('/login', {
+                                method: 'POST',
+                                body: JSON.stringify({ matno, password }),
+                                headers: { 'Content-Type': 'application/json' },
+                            })
+                            // .then (response => response.json())
+                            // .then(data => {
+                            //     if (roles === 'admin'){
+                            //          location.assign("/adminDash")
+                            //     }
+                            //         else if (roles === 'student') {
+                            //             location.assign("/studentDash")
+                            //         }
+                            //         else{
+                            //             alert('invalid credentials or role');
+                            //         }
+                            //     })
+      
+
+
+                           
+                            const dat = await res.json();
+                            console.log(dat);
+                            if (dat){
+                                matError.textContent = dat.matno;
+                                passwordError.textContent = dat.password;
+                            };
+                            
+                            if(dat.user){
+
+                                location.assign('/studentDash')
+                            }
+                    
+                    } catch (error) {
+                            console.log(error);
+                        }
+                });
+            </script>
+<footer>All right reserved @2024</footer> 
+</body> 
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> student Allocated Hall</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+    <script src="https://kit.fontawesome.com/696df01810.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/check.css">
+</head>
+<body>
+    
+    <nav>
+        <h1>ALEX EKWUEME FEDERAL UNIVERSITY</h1>
+        <ul>
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/login" class="btn">Admin</a></li>
+        </ul>
+    </nav>
+    
+
+      
+       
+         <style>
+            /* Ensure the body has some spacing at the top */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Target the #table1 container to add spacing from the top */
+#table1 {
+    margin-top: 10rem; /* Adds 10rem spacing from the top of the page */
+    width: 54vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Optional: Style for the tbody background color */
+#table1 tbody {
+    background-color: #ddd;
+}
+
+         </style>
+            <div id="table1" class="containe" style="background-color: white">
+                <h1 style="text-align: center;">Allocated Hall</h1>
+                <table style="width: 50vw; margin: auto;">
+                    <thead>
+                        <tr>
+                            <th>Hall Name</th>
+                            <th>Capacity</th>
+
+                            <th>Department</th>
+                            <th>Course Code</th>
+                            <th>Number of students</th>
+                            <th>Level</th>
+                            <th> Date</th>
+                        </tr>
+                    </thead>
+                    <tbody style="background-color: #ddd;">
+                        <% if (allocations && allocations.hall) { %>
+                            <tr>
+                                <td><%= allocations.hall.hallName %></td>
+                                <td><%= allocations.hall.capacity %></td>
+                                <td><%= allocations.department %></td>
+                                <td><%= allocations.courseCode %></td>
+                                <td><%= allocations.students %></td>
+                                <td><%= allocations.level %></td>
+                                <td><%= new Date(allocations.allocatedAt).toLocaleDateString()%></td>
+                            </tr>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="3">No allocations available</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            
+        
+
+  
+ 
+
+</body>
+</html>
