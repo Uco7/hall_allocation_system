@@ -3,7 +3,7 @@ const express = require('express');
 const path = require("path");
 const bodyParser = require("body-parser");
 const sessionMiddleware = require("./src/helperMildware/session");
-const connectDb = require("./src/db/connectDb");// requiring the the database connection
+const connectDb = require("./src/DB/connectDb");// requiring the the database connection
 const getRoute=require("./src/route/getRoute");
 const postRoute=require("./src/route/postRoute")
 
